@@ -1,8 +1,6 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand"
-      [class.highlight]="isHighlight"
-      [style.font-size.px]="fontSize"
+    <a class="navbar-brand" [class.highlight]="isHighlight" [style.font-size.px]="fontSize"
       href="index.html">conduit</a>
     <!-- <a class="navbar-brand" [class]="{ highlight: isHighlight }" href="index.html">conduit</a> -->
     <!-- <a class="navbar-brand"
@@ -11,7 +9,7 @@
     <!-- <a class="navbar-brand"
       [style]="{ fontSize: fontSize + 'px'}"
       href="index.html">conduit</a> -->
-      <!-- <a class="navbar-brand"
+    <!-- <a class="navbar-brand"
       [ngStyle]="{ 'font-size.px': fontSize}"
       href="index.html">conduit</a>
  -->
@@ -21,8 +19,18 @@
       <i class="ion-search"></i>
     </button>
 
-    {{ keyword }}
+    <!-- {{ keyword }} -->
 
-    <span *ngIf="!keyword">請輸入查詢條件</span>
+    <span class="highlight">
+      <ng-container *ngIf="!keyword; then noKeyword; else inputKeyword"></ng-container>
+      <ng-template #noKeyword>
+        請輸入查詢條件
+      </ng-template>
+      <ng-template #inputKeyword>
+        輸入的關鍵字是: {{ keyword }}
+      </ng-template>
+    </span>
+
+
   </div>
 </nav>
