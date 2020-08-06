@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng10-pchome-practice';
+  title = 'conduit!';
+  subtitle = 'A place to share your <u>knowledge</u>.';
 }
