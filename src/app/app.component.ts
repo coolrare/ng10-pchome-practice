@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'conduit!';
@@ -129,4 +129,10 @@ export class AppComponent {
       favoritesCount: 5,
     },
   ];
+
+  search(keyword: string) {
+    console.log(keyword);
+
+    this.articles = this.articles.filter(item => item.title.indexOf(keyword) !== -1);
+  }
 }
