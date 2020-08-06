@@ -1,9 +1,22 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="index.html">conduit</a>
-    <input
-      [(ngModel)]="keyword"
-      class="form-control form-control-sm search-input" type="text" placeholder="Keyword">
+    <a class="navbar-brand"
+      [class.highlight]="isHighlight"
+      [style.font-size.px]="fontSize"
+      href="index.html">conduit</a>
+    <!-- <a class="navbar-brand" [class]="{ highlight: isHighlight }" href="index.html">conduit</a> -->
+    <!-- <a class="navbar-brand"
+      [style]="{ 'font-size': fontSize + 'px'}"
+      href="index.html">conduit</a> -->
+    <!-- <a class="navbar-brand"
+      [style]="{ fontSize: fontSize + 'px'}"
+      href="index.html">conduit</a> -->
+      <!-- <a class="navbar-brand"
+      [style]="{ 'font-size.px': fontSize}"
+      href="index.html">conduit</a> -->
+
+
+    <input [(ngModel)]="keyword" class="form-control form-control-sm search-input" type="text" placeholder="Keyword">
     <button class="btn btn-sm btn-primary" (click)="search($event)">
       <i class="ion-search"></i>
     </button>
